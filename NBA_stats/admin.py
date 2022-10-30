@@ -1,5 +1,14 @@
 from django.contrib import admin
-from NBA_stats import models
+from .models import Equipo
 
 
-admin.site.register(models.Equipo)
+class EquipoAdmin(admin.ModelAdmin):
+
+    list_display = ('nombre', 'id_equipo', 'ciudad')
+
+    search_fields = ('nombre', 'id_equipo', 'ciudad')
+
+    ordering = ('id_equipo',)
+
+
+admin.site.register(Equipo, EquipoAdmin)

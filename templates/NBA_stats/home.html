@@ -7,7 +7,33 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Home</h1>
     <a href="{% url 'logout' %}">Cerrar sesión</a>
+
+    <form>
+        <div>
+            Equipo 1
+            <select>
+                {% for equipo in equipos %}
+                 
+                    <option>{{ equipo }}</option>
+                 
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <button type="submit">VS</button>
+        </div>
+        <div>
+            Equipo 2
+            <select>
+                {% for equipo in equipos %}
+                 
+                    <option>{{ equipo }}</option>
+                 
+                {% endfor %}
+            </select>
+        </div>
+    </form>
+
 </body>
 </html>
