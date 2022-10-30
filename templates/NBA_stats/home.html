@@ -23,15 +23,13 @@
         
         
         <div>
-            {% for equipo in equipos %}
-                {% if equipo.id_equipo == id_equipo_1 %}
-                    <img src="{{equipo.escudo.url}}" height="100" width="100">
-                {% endif %}
-            {% endfor %}
+
+            <img src="{% static 'images/logos/imagen_equipo_0.png' %}" height="100" width="100" id="imagen-equipo-A">
+
         </div>
         
 
-        <select class="buscador-equipo-1">
+        <select class="buscador-equipos" id="equipoA" onchange="change_image();">
             {% for equipo in equipos %}
                 
                 <option value="{{ equipo.id_equipo }}">{{ equipo }}</option>
@@ -47,15 +45,13 @@
 
         
         <div>
-            {% for equipo in equipos %}
-                {% if equipo.id_equipo == id_equipo_2 %}
-                    <img src="{{equipo.escudo.url}}" height="100" width="100">
-                {% endif %}
-            {% endfor %}
+
+                <img src="{% static 'images/logos/imagen_equipo_40.png' %}" height="100" width="100" id="imagen-equipo-B">
+
         </div>>
         
 
-        <select class="buscador-equipo-2">
+        <select class="buscador-equipos" id="equipoB" onchange="change_imageB();">
             {% for equipo in equipos %}
                 
                 <option value="{{ equipo.id_equipo }}" selected>{{ equipo }}</option>
