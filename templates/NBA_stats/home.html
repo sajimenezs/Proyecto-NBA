@@ -1,40 +1,72 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+      
     <title>Home</title>
+
 </head>
 <body>
     <a href="{% url 'logout' %}">Cerrar sesión</a>
 
-    <form>
+    <form method="GET">
+    
+        Equipo 1
+        <p  id="parrafo"></p>
+        
+        
         <div>
-            Equipo 1
-            <select>
-                {% for equipo in equipos %}
-                 
-                    <option>{{ equipo }}</option>
-                 
-                {% endfor %}
-            </select>
+            {% for equipo in equipos %}
+                {% if equipo.id_equipo == id_equipo_1 %}
+                    <img src="{{equipo.escudo.url}}" height="100" width="100">
+                {% endif %}
+            {% endfor %}
         </div>
+        
+
+        <select class="buscador-equipo-1">
+            {% for equipo in equipos %}
+                
+                <option value="{{ equipo.id_equipo }}">{{ equipo }}</option>
+                
+            {% endfor %}
+        </select>
+    
+    <div>    
+        <button type="submit">VS</button>
+    </div>
+    
+        Equipo 2
+
+        
         <div>
-            <button type="submit">VS</button>
-        </div>
-        <div>
-            Equipo 2
-            <select>
-                {% for equipo in equipos %}
-                 
-                    <option>{{ equipo }}</option>
-                 
-                {% endfor %}
-            </select>
-        </div>
+            {% for equipo in equipos %}
+                {% if equipo.id_equipo == id_equipo_2 %}
+                    <img src="{{equipo.escudo.url}}" height="100" width="100">
+                {% endif %}
+            {% endfor %}
+        </div>>
+        
+
+        <select class="buscador-equipo-2">
+            {% for equipo in equipos %}
+                
+                <option value="{{ equipo.id_equipo }}" selected>{{ equipo }}</option>
+                
+            {% endfor %}
+        </select>
+        
     </form>
+
+    <script src="{% static 'js/team_selecter.js' %}"></script>
 
 </body>
 </html>
+

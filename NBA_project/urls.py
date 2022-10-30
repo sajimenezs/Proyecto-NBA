@@ -19,13 +19,15 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 from NBA_stats.views import home, cerrar_sesion
+from calendario_juegos.views import calendario_juegos
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('logout/', cerrar_sesion, name='logout')
+    path('logout/', cerrar_sesion, name='logout'),
+    path('calendario/', calendario_juegos, name='calendario')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
