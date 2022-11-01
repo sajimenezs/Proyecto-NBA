@@ -2,20 +2,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-      
     <title>Home</title>
 
 </head>
 <body>
+    <header class="header">
+        
+    </header>
+    
     <a href="{% url 'logout' %}">Cerrar sesión</a>
-
     <form method="GET">
     
         Equipo 1
@@ -49,7 +51,7 @@
         <div>
             {% for equipo in equipos %}
                 {% if equipo.id_equipo == id_equipo_2 %}
-                    <img src="{{equipo.escudo.url}}" height="100" width="100">
+                    <img src="{{equipo.escudo.url}}" height="100" width="100"/>
                 {% endif %}
             {% endfor %}
         </div>>
