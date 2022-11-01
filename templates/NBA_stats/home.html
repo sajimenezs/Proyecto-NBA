@@ -1,68 +1,75 @@
+{% extends 'base/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-      
-    <title>Home</title>
 
-</head>
-<body>
-    <a href="{% url 'logout' %}">Cerrar sesión</a>
+{% block head %}
 
-    <form method="GET">
+<link href="{% static 'css/home_styles.css' %}" rel="stylesheet" type="text/css">
+
+{% endblock %}
+
+
+{% block content %}
+
+<section class="banner contenido">
+
+    <div class="card" style="width: 18rem">
+
+        <img src="{% static 'images/logos/imagen_equipo_0.png' %}" id="imagen-equipo-A" class="card-img-top" height="220px" width="200px">
     
-        Equipo 1
-        <p  id="parrafo"></p>
+        <div class="card-body">
+    
+            <form method="GET">
+    
+                <select class="buscador-equipos" id="equipoA" onchange="change_image();">
+                    {% for equipo in equipos %}
+                        
+                        <option value="{{ equipo.id_equipo }}">{{ equipo }}</option>
+                        
+                    {% endfor %}
+                </select>
+            
+            </form>
         
-        
-        <div>
-
-            <img src="{% static 'images/logos/imagen_equipo_0.png' %}" height="100" width="100" id="imagen-equipo-A">
-
         </div>
-        
-
-        <select class="buscador-equipos" id="equipoA" onchange="change_image();">
-            {% for equipo in equipos %}
-                
-                <option value="{{ equipo.id_equipo }}">{{ equipo }}</option>
-                
-            {% endfor %}
-        </select>
     
-    <div>    
-        <button type="submit">VS</button>
     </div>
     
-        Equipo 2
-
         
-        <div>
-
-                <img src="{% static 'images/logos/imagen_equipo_40.png' %}" height="100" width="100" id="imagen-equipo-B">
-
-        </div>>
+    <div>    
+        <button type="submit" class="btn btn-danger">VS</button>
+    </div>
+    
+    
         
-
-        <select class="buscador-equipos" id="equipoB" onchange="change_imageB();">
-            {% for equipo in equipos %}
+    <div class="card" style="width: 18rem">
+        
+        <img src="{% static 'images/logos/imagen_equipo_40.png' %}" id="imagen-equipo-B" class="card-img-top" height="220px" width="200px">
+    
+        <div class="card-body">
+        
+            <form method="GET">
                 
-                <option value="{{ equipo.id_equipo }}" selected>{{ equipo }}</option>
-                
-            {% endfor %}
-        </select>
-        
-    </form>
-
+    
+                <select class="buscador-equipos" id="equipoB" onchange="change_imageB();">
+    
+                    {% for equipo in equipos %}
+                        
+                        <option value="{{ equipo.id_equipo }}" selected>{{ equipo }}</option>
+                        
+                    {% endfor %}
+                </select>
+    
+            
+            </form>
+    
+        </div>
+    
+    </div>    
+    
+    </section>
+    
     <script src="{% static 'js/team_selecter.js' %}"></script>
+    
 
-</body>
-</html>
+{% endblock %}
 

@@ -1,0 +1,36 @@
+.card{
+    background: linear-gradient(50deg, rgb(3, 3, 221), rgb(0, 0, 0), #910000fd);
+    height: 350px;
+}
+
+.card-body{
+    margin: 10.5%;
+}
+
+.buscador-equipos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido{
+    width: 65%;
+    max-width: 1200px;
+    align-items: center;
+    margin: auto;
+}
+
+.banner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+}
+
+.btn-danger{
+    background-color: rgb(160, 14, 14);
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+}
