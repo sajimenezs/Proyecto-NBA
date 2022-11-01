@@ -4,7 +4,7 @@
 {% block head %}
 
 <link href="{% static 'css/home_styles.css' %}" rel="stylesheet" type="text/css">
-
+<script src="{% static 'js/team_selecter.js' %}"></script>
 {% endblock %}
 
 
@@ -20,7 +20,7 @@
     
             <form method="GET">
     
-                <select class="buscador-equipos" id="equipoA" onchange="change_image();">
+                <select class="buscador-equipos" id="equipoA" onchange="change_img();">
                     {% for equipo in equipos %}
                         
                         <option value="{{ equipo.id_equipo }}">{{ equipo }}</option>
@@ -50,7 +50,7 @@
             <form method="GET">
                 
     
-                <select class="buscador-equipos" id="equipoB" onchange="change_imageB();">
+                <select class="buscador-equipos" id="equipoB" onchange="change_imgB();">
     
                     {% for equipo in equipos %}
                         
@@ -68,8 +68,7 @@
     
     </section>
     
-    <script src="{% static 'js/team_selecter.js' %}"></script>
+
     
 
 {% endblock %}
-
