@@ -1,0 +1,113 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(40deg, #17408b, #C9082A);
+    height: 100vh;
+}
+
+.login {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    background: #ffffff;
+    border-radius: 5px;
+}
+
+.login-head{
+    text-align: center;
+    padding: 20px 0px 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+.form-login{
+    padding: 40px 40px;
+    box-sizing: border-box;
+}
+
+.user{
+    position: relative;
+    border-bottom: 2px solid;
+    margin: 30px 0;
+}
+
+.password{
+    position: relative;
+    border-bottom: 2px solid;
+    margin: 30px 0;
+}
+
+.form-login form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .user{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.user input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none ;
+    outline: none;
+}
+
+.user label{
+    position: absolute;
+    top: 80%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.user .input-user ~label{
+    top:60%;
+}
+
+.user:hover{
+    color: #ffffff;
+    cursor:pointer;
+}
+
+.user input:focus ~ label{
+    top: -7px;
+    color:#1e079d;
+}
+
+.user input:not(:placeholder-shown) ~label{
+    top: -7px;
+    color:#1e079d;
+}
+
+
+.boton{
+    width: 250px;
+    height: 30px;
+    border-radius: 5%;
+    background-color: #baaeff;
+    font-size: 100%;
+    color: black;
+    font-family: cursive;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.boton:hover{
+    background-color: #000000;
+    font-size: 100%;
+    color: white;
+}

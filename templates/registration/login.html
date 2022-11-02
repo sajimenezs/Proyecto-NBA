@@ -6,8 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type='text/css' rel="stylesheet" href='{% static "css/login.css" %}' />
-    
+    <link type='text/css' rel="stylesheet" href="{% static 'css/login_styles.css' %}" />
     <title>Iniciar sesion</title>
 </head>
 
@@ -21,13 +20,13 @@
     <form method="post">
         {% csrf_token %}
         <div class="user">
-          <input  type="text" name="username">
+          <input  type="text" name="username" placeholder=" " class="input-user">
           <label class="cUser" for="usuario">
-            <span class="txt-user">Usuario</span>
+            <span class="txt-user"><br>Usuario</br></span>
           </label>
         </div>
         <div class="user">
-          <input  type="password" name="password">
+          <input  type="password" name="password" placeholder=" ">
           <label class="cUser" for="pass">
             <span class="txt-user">Contraseña</span>
           </label>
