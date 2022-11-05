@@ -19,7 +19,8 @@
     
         <div class="card-body">
     
-            <form method="GET">
+            <form method="get">
+                {% csrf_token %}
     
                 <select class="buscador-equipos" id="equipoA" onchange="change_img();">
                     {% for equipo in equipos %}
@@ -28,8 +29,6 @@
                         
                     {% endfor %}
                 </select>
-            
-            </form>
         
         </div>
     
@@ -41,14 +40,12 @@
     </div>
     
     
-        
+    
     <div class="card" style="width: 18rem">
         
         <img src="{% static 'images/logos/imagen_equipo_40.png' %}" id="imagen-equipo-B" class="card-img-top" height="220px" width="200px">
     
         <div class="card-body">
-        
-            <form method="GET">
                 
     
                 <select class="buscador-equipos" id="equipoB" onchange="change_imgB();">
@@ -58,6 +55,7 @@
                         <option value="{{ equipo.id_equipo }}" selected>{{ equipo }}</option>
                         
                     {% endfor %}
+
                 </select>
     
             

@@ -4,7 +4,7 @@ from django.contrib.auth import logout
 from NBA_stats.models import Equipo
 
 
-@login_required
+#@login_required
 def home(request):
     equipos = Equipo.objects.order_by('nombre')
     context = {'equipos' : equipos, 'id_equipo_1' : 0, 'id_equipo_2' : 40}

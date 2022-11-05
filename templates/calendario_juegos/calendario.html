@@ -1,13 +1,127 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendario</title>
-</head>
-<body>
-    <a href="{% url 'logout' %}">Cerrar sesión</a>
-    <h1>sisirve</h1>
-</body>
-</html>
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block head %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/calendario_styles.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+    
+    <section id="contenedor">
+        <header class="container">
+            <br><h1>Calendario de juegos</h1></br>
+            <br><h3>Fecha:</h3></br>
+
+            <form action="/calendario/" method="GET">
+                <input type="date" value={{fecha_hoy}} name="date">
+                <button type="submit">Buscar</button>
+            </form>
+
+        </header>
+        <div class="partidos">
+
+            {% for juego in juegos %}
+                
+                <div class="juegos">
+
+                    <div class="home">
+
+                        {% for equipo in equipos %}
+
+                            {% if equipo.id_equipo == juego.get_id_home_team %}
+
+                                <img src="{{juego.imprimir_imagen_home}}"  height="50px" width="50px"/>
+
+                                <h6> {{equipo.nombre}} </h6>
+                                
+                            {% endif %}
+
+                        {% endfor %}
+
+                    </div>
+
+                        <div class="estado-juego">
+
+                            {% if juego.partido_en_juego %}
+
+                                <h3>En juego</h3>
+                                
+                                {{juego.score_home}}
+                                {{juego.score_visitor}}
+
+                            {% elif juego.partido_terminado %}
+
+                                <h3>Terminado</h3>
+                                
+                                {{juego.score_home}}
+                                {{juego.score_visitor}}
+
+                            {% else %}
+
+                                <h3>Por jugar</h3>
+
+                                {{juego.get_hour}}
+
+                            {% endif %}
+
+
+                        </div>
+
+                    <div class="visitor">
+
+                        {% for equipo in equipos %}
+
+                            {% if equipo.id_equipo == juego.get_id_visitor_team %}
+
+                                <img src="{{juego.imprimir_imagen_visitor}}" height="50px" width="50px" />
+                                <h6> {{equipo.nombre}} </h6>
+
+                                
+                            {% endif %}
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+            
+            {% endfor %}
+
+        </div>
+
+        <div class="paginacion">
+
+            <ul class="pagination">
+
+                {% if juegos.has_previous %}
+                    <li class="page-item">
+                        <a href="?page={{juegos.previous_page_number}}" class="page-link">Previo</a>
+                    </li>
+
+                {% else %}
+                    <li class="page-item">
+                        <a class="page-link disabled" disabled>Previo</a>
+                    </li>
+                {% endif %}
+
+                {% if juegos.has_next %}
+                    <li class="page-item">
+                        <a href="?page={{juegos.next_page_number}}" class="page-link">Siguiente</a>
+                    </li>
+
+                {% else %}
+                    <li class="page-item">
+                        <a class="page-link disabled" disabled>Siguiente</a>
+                    </li>
+                {% endif %}
+
+            </ul>
+
+        </div>
+
+    </section>
+
+{% endblock %}

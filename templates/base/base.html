@@ -12,15 +12,15 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     
-
     {% block head %}
     {% endblock %}
+
 </head>
 <body>
 
-  <header class="bg_animate">
-  
+  <div class="bg_animate">
 
+    
     <div class="burbujas">
 
       <div class="burbuja"></div>
@@ -33,9 +33,13 @@
       <div class="burbuja"></div>
       <div class="burbuja"></div>  
       <div class="burbuja"></div>
+      <div class="burbuja"></div>
 
       
     </div>
+    
+    {% block content %}
+    {% endblock %}
         
 
   <div class="header_nav">
@@ -44,18 +48,14 @@
       <img src="{% static 'images/logos/imagen_equipo_38.png' %}" height="50px" width="50px">
       </a>
       <nav>
-        <a href="/"> Calendario</a>
+        <a href="/calendario"> Calendario</a>
         <a href="/"> Equipos</a>
         <a href="/logout">Log out</a>
       </nav>
     </div>
   </div>
 
-
-    {% block content %}
-    {% endblock %}
-
-  </header>
+</div>
 
 </body>
 </html> 
