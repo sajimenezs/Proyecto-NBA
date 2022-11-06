@@ -85,6 +85,7 @@
 
 .estado-juego{
     position: absolute;
+    text-align: center;
     left: 28%;
     background-color: rgb(300, 300, 300, 0.2);
     border-radius: 4%;
@@ -92,6 +93,16 @@
     width: 50%;
 }
 
+.info{
+    position:relative;
+    color: white;
+}
+
+.estado-juego h3{
+    color: white;
+    position: relative;
+    top:10%  
+}
 
 .paginacion{
     position: absolute;
