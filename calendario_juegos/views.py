@@ -1,4 +1,3 @@
-from multiprocessing import context
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from calendario_juegos.get_games import get_games

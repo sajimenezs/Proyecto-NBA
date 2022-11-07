@@ -19,10 +19,10 @@
     
         <div class="card-body">
     
-            <form method="get">
+            <form action="/teamvsteam/" method="get">
                 {% csrf_token %}
     
-                <select class="buscador-equipos" id="equipoA" onchange="change_img();">
+                <select class="buscador-equipos" name="home" id="equipoA" onchange="change_img();">
                     {% for equipo in equipos %}
                         
                         <option value="{{ equipo.id_equipo }}">{{ equipo }}</option>
@@ -48,7 +48,7 @@
         <div class="card-body">
                 
     
-                <select class="buscador-equipos" id="equipoB" onchange="change_imgB();">
+                <select class="buscador-equipos" name="visitor" id="equipoB" onchange="change_imgB();">
     
                     {% for equipo in equipos %}
                         

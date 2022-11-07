@@ -47,35 +47,54 @@
 
                             {% if juego.partido_en_juego %}
 
-                                <h3>En juego</h3>
+                                <h2>En juego</h2>
 
                                 <div class="info">
-                                
-                                    {{juego.score_home}}
-                                    -
-                                    {{juego.score_visitor}}
 
+                                    {% if juego.score_home > juego.score_visitor %}
+                                
+                                    <h3 style="color:blue;">{{juego.score_home}}</h3> 
+                                    <h3>-</h3> 
+                                    <h3 style="color:red;">{{juego.score_visitor}}</h3>
+
+                                    {% else %}
+
+                                    <h3 style="color:red;">{{juego.score_home}}</h3>
+                                    <h3>-</h3> 
+                                    <h3 style="color:blue;">{{juego.score_visitor}}</h3>
+
+                                    {% endif %}
                                 </div>
 
                             {% elif juego.partido_terminado %}
 
-                                <h3>Terminado</h3>
+                                <h2>Terminado</h2>
                                 
                                 <div class="info">
                                 
-                                    {{juego.score_home}}
-                                    -
-                                    {{juego.score_visitor}}
+                                    {% if juego.score_home > juego.score_visitor %}
+                                
+                                        <h3 style="color:blue;">{{juego.score_home}}</h3> 
+                                        <h3>-</h3> 
+                                        <h3 style="color:red;">{{juego.score_visitor}}</h3>
+
+                                    {% else %}
+
+                                        <h3 style="color:red;">{{juego.score_home}}</h3>
+                                        <h3>-</h3> 
+                                        <h3 style="color:blue;">{{juego.score_visitor}}</h3>
+
+                                    {% endif %}
 
                                 </div>
 
                             {% else %}
 
-                                <h3>Por jugar</h3>
+                                <h2>Por jugar</h2>
 
                                 <div class="info">
                                 
-                                    {{juego.get_hour}}
+                                    <h4>{{juego.get_hour}}</h4>
 
                                 </div>
 

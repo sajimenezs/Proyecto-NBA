@@ -18,8 +18,6 @@ def get_games (querystring={"date": date.today()}):
 
 	juegos = response_json["response"]
 
-	print(juegos)
-
 	lista_juegos = []
 
 	for juego in juegos:

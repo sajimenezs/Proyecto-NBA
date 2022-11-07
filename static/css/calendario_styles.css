@@ -94,11 +94,27 @@
 }
 
 .info{
-    position:relative;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    width: 20%;
+    height: 50%;
     color: white;
 }
 
-.estado-juego h3{
+.info h3{
+    position: relative;
+    left: 200%;
+    top: 40%;
+}
+
+.info h4{
+    position: relative;
+    left: 200%;
+    top: 40%;
+}
+
+.estado-juego h2{
     color: white;
     position: relative;
     top:10%  

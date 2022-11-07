@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block head %}
+
+<link href="{% static 'css/TeamVsTeam_styles.css' %}" rel="stylesheet" type="text/css">
+<script src="{% static 'js/team_selecter.js' %}"></script>
+
+{% endblock %}
+
+{% block content %}
+
+<section class"contenido">
+    <div class="teamVsTeam">
+        <div class="home">
+            <div class="contenido-home">
+                <div class="logo-home">
+                    <img src="{{home_img}}" id="imagen-equipo-A"  class="card-img-top" height="220px"  width="200px">
+                </div>
+                
+            </div>
+            <div class="estadisticas-home">
+                    <p>Asistencias: </p>
+            </div>
+        </div>
+        <div class="info">
+            <h4>Asistencias</h4>
+            <h4>Games</h4>
+        </div>
+        <div class="visitor">
+            <div class="contenido-visitor">
+                <div class="logo-visitante">
+
+                    <img src="{{visitor_img}}" id="imagen-equipo-B"   class="card-img-top" height="220px"   width="200px">
+
+                </div>
+                
+                <div class="estadisticas-visitante">
+                    <p>Games: </p>
+                    <p>Numero de pases</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

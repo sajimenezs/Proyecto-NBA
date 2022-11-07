@@ -1,0 +1,75 @@
+.home{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    color: rgb(3, 3, 221);
+}
+.info{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.566);
+}
+.visitor{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    color:rgb(145, 0, 0);
+}
+.contenido .teamVsTeam{
+    display: flex;
+    flex-direction: row;
+}
+
+.home{
+    width: 45%;
+    background:rgb(145, 0, 0) ;
+    float: left;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -ms-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    transform: skew(20deg);
+}
+.info{
+    height: 100vh;
+    width: 10%;
+    float:left;
+    -moz-transform: skew(20deg);
+    -ms-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    transform: skew(20deg); 
+}
+
+.visitor{
+    width: 45%;
+    background-color: rgb(3, 3, 221);
+    float: left;
+    -moz-transform: skew(20deg);
+    -ms-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    transform: skew(20deg);
+}
+
+
+
+.contenido-home{
+    transform: skewX(-20deg);
+    font-size: x-large;
+}
+.contenido-visitor{
+    transform: skewX(-20deg);
+    font-size: x-large;
+}
+
+.logo-home{
+    transform: translate(-100%, 100%);
+    position: relative;
+}
+
+.logo-visitante{
+    transform: translate(110%, -100%);
+    position: relative;
+}
