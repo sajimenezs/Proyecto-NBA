@@ -44,35 +44,35 @@
 .juegos{
     display: flex;
     align-items:center;
-    height: 18%;
+    height: 26%;
     margin: 2%;
-}
-
-.juegos img {
-    position: relative;
-    margin: 5%;
 }
 
 .juegos h6{
     position: relative;
-    top: -6%;
     color: rgb(230, 230, 230);
 }
 
 .home{
     position: absolute;
-    height: 20%;
+    height: 25%;
     width: 20%;
-    left: 5%;
     text-align:center;
 }
 
 .visitor{
     position: absolute;
-    height: 20%;
+    height: 25%;
     width: 20%;
-    left: 80%;
+    left: 85%;
     text-align:center;
+}
+
+.juegos img{
+    position: relative;
+    height: 100%;
+    width: 45%;
+    padding: 2%;
 }
 
 .partidos{
@@ -84,40 +84,23 @@
 }
 
 .estado-juego{
-    position: absolute;
+    position: relative;
     text-align: center;
     left: 28%;
     background-color: rgb(300, 300, 300, 0.2);
-    border-radius: 4%;
-    height: 20%;
+    border-radius: 3%;
+    height: 100%;
     width: 50%;
 }
 
-.info{
-    display: flex;
-    justify-content: center;
-    justify-content: space-between;
-    width: 20%;
-    height: 50%;
-    color: white;
-}
-
-.info h3{
-    position: relative;
-    left: 200%;
-    top: 40%;
-}
-
-.info h4{
-    position: relative;
-    left: 200%;
-    top: 40%;
-}
-
 .estado-juego h2{
-    color: white;
     position: relative;
-    top:10%  
+    top: 5%;
+}
+
+.estado-juego span{
+    font-size: x-large;
+    justify-content: space-around;
 }
 
 .paginacion{

@@ -20,6 +20,7 @@ from django.conf import settings
 
 from NBA_stats.views import home, team_vs_team, cerrar_sesion
 from calendario_juegos.views import calendario_juegos
+from equipos_info.views import equipos_info
 
 
 urlpatterns = [
@@ -28,7 +29,8 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('logout/', cerrar_sesion, name='logout'),
     path('calendario/', calendario_juegos, name='calendario'),
-    path('teamvsteam/', team_vs_team, name='teamvsteam')
+    path('teamvsteam/', team_vs_team, name='teamvsteam'),
+    path('equipos_info/', equipos_info, name='equipos_info'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

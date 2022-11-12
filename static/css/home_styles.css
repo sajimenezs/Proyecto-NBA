@@ -1,10 +1,24 @@
+*{
+    margin:0;
+    padding:0;
+}
+
 .card{
     background: linear-gradient(50deg, rgb(3, 3, 221), rgb(0, 0, 0), rgba(145, 0, 0, 0.992));
-    height: 350px;
+    height: 60%;
 }
 
 .card-body{
     margin: 10.5%;
+}
+
+.card:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.card img{
+    padding: 5%;
 }
 
 .buscador-equipos{
@@ -36,3 +50,10 @@
     height: 100px;
     font-size: 30px;
 }
+
+.btn-danger:hover{
+    background-color: rgb(160, 14, 14);
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+

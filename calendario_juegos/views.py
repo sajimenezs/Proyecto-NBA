@@ -26,7 +26,7 @@ def calendario_juegos(request):
         fecha = "{}-{}-{}".format(fecha[:4], fecha[5:7], fecha[8:])
 
     # pagination
-    p = Paginator(juegos, 4)
+    p = Paginator(juegos, 3)
     page = request.GET.get('page')
     juegos = p.get_page(page)
 

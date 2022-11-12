@@ -26,11 +26,10 @@ def team_vs_team(request):
 
 
     # Obtener estadisticas de equipo
-    #home_stats = get_stats({"id":home, "season":year})
-    #visitor_stats = get_stats({"id":visitor, "season":year})
+    home_stats = get_stats({"id":home, "season":year})
+    visitor_stats = get_stats({"id":visitor, "season":year})
 
-    #context = {"home_img": home_img, "visitor_img": visitor_img, "home_stats": home_stats, "visitor_stats", visitor_stats}
-    context={"home_img": home_img, "visitor_img": visitor_img}
+    context = {"home_img": home_img, "visitor_img": visitor_img, "home_stats": home_stats, "visitor_stats": visitor_stats}
     return render(request, 'NBA_stats/TeamVsTeam.html', context)
 
 

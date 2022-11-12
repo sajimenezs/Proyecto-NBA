@@ -19,7 +19,7 @@ response = requests.request("GET", url, headers=headers)
 
 response_json: dict = response.json()
 equipos = response_json["response"]
-n = 41 #Limite equipos NBA (40)
+n = 41 # Limite equipos NBA (40)
 
 id_equipo = [equipos[i]["id"] for i in range(n)]
 nombre = [equipos[i]["name"] for i in range(n)]

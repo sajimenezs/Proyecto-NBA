@@ -29,13 +29,13 @@
 
                     <div class="home">
 
-                        {% for equipo in equipos %}
+                        {% for equipo_1 in equipos %}
 
-                            {% if equipo.id_equipo == juego.get_id_home_team %}
+                            {% if equipo_1.id_equipo == juego.get_id_home_team %}
 
-                                <img src="{{juego.imprimir_imagen_home}}"  height="50px" width="50px"/>
+                                <img src="{{juego.imprimir_imagen_home}}"/>
 
-                                <h6> {{equipo.nombre}} </h6>
+                                <h6> {{equipo_1.nombre}} </h6>
                                 
                             {% endif %}
 
@@ -49,54 +49,49 @@
 
                                 <h2>En juego</h2>
 
-                                <div class="info">
+                                {% if juego.score_home > juego.score_visitor %}
+                            
+                                <span style="color:blue;">{{juego.score_home}}</span> 
+                                <span>-</span> 
+                                <span style="color:red;">{{juego.score_visitor}}</span>
 
-                                    {% if juego.score_home > juego.score_visitor %}
-                                
-                                    <h3 style="color:blue;">{{juego.score_home}}</h3> 
-                                    <h3>-</h3> 
-                                    <h3 style="color:red;">{{juego.score_visitor}}</h3>
+                                {% else %}
 
-                                    {% else %}
+                                <span style="color:red;">{{juego.score_home}}</span>
+                                <span>-</span> 
+                                <span style="color:blue;">{{juego.score_visitor}}</span>
 
-                                    <h3 style="color:red;">{{juego.score_home}}</h3>
-                                    <h3>-</h3> 
-                                    <h3 style="color:blue;">{{juego.score_visitor}}</h3>
-
-                                    {% endif %}
-                                </div>
+                                {% endif %}
+                        
 
                             {% elif juego.partido_terminado %}
+                                
 
                                 <h2>Terminado</h2>
-                                
-                                <div class="info">
-                                
-                                    {% if juego.score_home > juego.score_visitor %}
-                                
-                                        <h3 style="color:blue;">{{juego.score_home}}</h3> 
-                                        <h3>-</h3> 
-                                        <h3 style="color:red;">{{juego.score_visitor}}</h3>
+                            
+                                {% if juego.score_home > juego.score_visitor %}
+                            
+                                    <span style="color:blue;">{{juego.score_home}}</span> 
+                                    <span>-</span> 
+                                    <span style="color:red;">{{juego.score_visitor}}</span>
 
-                                    {% else %}
+                                {% else %}
 
-                                        <h3 style="color:red;">{{juego.score_home}}</h3>
-                                        <h3>-</h3> 
-                                        <h3 style="color:blue;">{{juego.score_visitor}}</h3>
+                                    <span style="color:red;">{{juego.score_home}}</span>
+                                    <span>-</span> 
+                                    <span style="color:blue;">{{juego.score_visitor}}</span>
 
-                                    {% endif %}
+                                {% endif %}
 
-                                </div>
+                    
 
                             {% else %}
 
+
                                 <h2>Por jugar</h2>
+                            
+                                <h4>{{juego.get_hour}}</h4>
 
-                                <div class="info">
-                                
-                                    <h4>{{juego.get_hour}}</h4>
-
-                                </div>
 
                             {% endif %}
 
@@ -105,12 +100,12 @@
 
                     <div class="visitor">
 
-                        {% for equipo in equipos %}
+                        {% for equipo_2 in equipos %}
 
-                            {% if equipo.id_equipo == juego.get_id_visitor_team %}
+                            {% if equipo_2.id_equipo == juego.get_id_visitor_team %}
 
                                 <img src="{{juego.imprimir_imagen_visitor}}" height="50px" width="50px" />
-                                <h6> {{equipo.nombre}} </h6>
+                                <h6> {{equipo_2.nombre}} </h6>
 
                                 
                             {% endif %}

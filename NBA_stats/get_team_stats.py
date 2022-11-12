@@ -18,6 +18,6 @@ def get_stats (querystring):
 
 	stats_equipo = response_json["response"]
 
-	a = Team_stats(stats_equipo)
+	a = Team_stats(stats_equipo[0])
 
 	return a
